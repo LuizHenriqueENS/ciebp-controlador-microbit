@@ -1,0 +1,79 @@
+:root {
+  --color-50: #f3eef7;
+  --color-100: #decee8;
+  --color-200: #c9afd9;
+  --color-300: #b490cb;
+  --color-400: #9f71bc;
+  --color-500: #8a52ad;
+  --color-600: #754593;
+  --color-700: #58346f;
+  --color-800: #402650;
+  --color-900: #271731;
+  --color-950: #0e0811;
+}
+
+* {
+  margin: 0;
+}
+
+body,
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  height: 100vh;
+  border-radius: 10px;
+  box-shadow: var(--color-900) 1px 1px 40px 10px;
+}
+.microbit-status {
+  text-align: center;
+}
+.fa-bluetooth {
+  color: var(--color-600);
+  font-size: 80px;
+  cursor: pointer;
+}
+.microbit-status {
+  animation: pulse 1s ease infinite alternate-reverse;
+}
+
+.loader {
+  display: none;
+  border: 16px solid var(--color-300); /* Light grey */
+  border-top: 16px solid var(--color-700); /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+.controller {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
